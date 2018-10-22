@@ -11,8 +11,9 @@ def inject():
     for key in comp['components']:
         obj = providers.Factory(_import('components.' + comp['components'][key]))
         obj_pool.update({key: obj()})
-        main_cls = obj_pool.get(comp['main'])
-        main_cls.execute()
+    
+    main_cls = obj_pool.get(comp['main'])
+    main_cls.execute()
         
     
 def _import(name):
