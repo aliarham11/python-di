@@ -1,0 +1,6 @@
+{
+    "components": {
+        "main": "main.Main"
+    },
+    "main": "main"
+}
