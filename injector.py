@@ -9,8 +9,13 @@ def inject():
         comp = json.load(f)
 
     for key in comp['components']:
-        obj = providers.Factory(_import('components.' + comp['components'][key]))
+        component = comp['components'][key]
+        obj = providers.Factory(_import('components.' + component["path"]))
+        # if (len(component["dependencies"]) > 0):
+        #     print("ada dependencies")
+        
         obj_pool.update({key: obj()})
+        
     
     main_cls = obj_pool.get(comp['main'])
     main_cls.execute()

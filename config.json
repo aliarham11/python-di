@@ -1,6 +1,15 @@
 {
     "components": {
-        "main": "main.Main"
+        "main": {
+            "path": "main.Main",
+            "dependencies": [
+                "first_component"
+            ]
+        },
+        "first_component": {
+            "path": "first_component.FirstComponent",
+            "dependencies": []
+        }
     },
     "main": "main"
 }
